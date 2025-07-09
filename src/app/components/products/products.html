@@ -1,0 +1,9 @@
+<p>products works!</p>
+
+<ul>
+    @for (product of products; track product.id ) {
+      <li>{{product.title}}</li>
+    } @empty {
+      <li>no hay productos</li>
+    }
+</ul>
