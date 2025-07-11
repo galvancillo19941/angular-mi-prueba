@@ -15,12 +15,24 @@
 
 </header>
 
-<div>
-  <h1>¿Qué es lo que estás buscando?</h1>
-  <input type="text" placeholder="Introduce una palabra clave...">
+<div class="flex justify-center">
+
+  <div class="w-[900px]">
+    <p class="text-[30px] font-bold">¿Qué es lo que estás buscando?</p>
+    <form class="space-y-4">
+    <input
+      type="text"
+      placeholder="Nombre"
+      class="block w-full border-gray-300 rounded-md shadow-sm"
+    />
+  </form>
+  </div>
+
 </div>
 
+<app-categories [products]="products"></app-categories>
+
 <!-- <app-products></app-products>
-<app-categories></app-categories> -->
+ -->
 
 <router-outlet />
