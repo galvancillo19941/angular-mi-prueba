@@ -1,8 +1,26 @@
 
-<h1>{{title}}</h1>
+<header>
 
-<app-categories></app-categories>
+  <div class="grid gap-4 grid-cols-2 p-8">
+    <div class="">
+      <img src="/logo.svg" alt="">
+    </div>
+    <div class="flex justify-end gap-10">
+      <div>Inicio </div>
+      <div>Categorias</div>
+      <div>Bolsa</div>
+      <div>Perfil</div>
+    </div>
+  </div>
 
-<app-products></app-products>
+</header>
+
+<div>
+  <h1>¿Qué es lo que estás buscando?</h1>
+  <input type="text" placeholder="Introduce una palabra clave...">
+</div>
+
+<!-- <app-products></app-products>
+<app-categories></app-categories> -->
 
 <router-outlet />
