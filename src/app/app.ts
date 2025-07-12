@@ -20,7 +20,6 @@ export class App {
     .then(res => res.json())
     .then(data => {
       this.products = data
-      console.log(data)
     })
     .catch(err => console.error(err));
 
