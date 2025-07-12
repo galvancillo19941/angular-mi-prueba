@@ -1,9 +1,33 @@
-<p>products works!</p>
+<section class="px-[30px] py-[10px] product-section">
+  <p class="text-[20px] font-semibold mb-8">Top ventas</p>
+
+  <div class="contain-card grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-[20px]">
+
+      @for (product of products; track product.id ) {
+      <div class="card px-[19px] pt-[14px] rounded-[20px] pb-[15px]">
+        <img [src]="product.image" alt="" class="img-product">
+
+        <div class="body flex items-center justify-between gap-[10px]">
+          <div class="mt-[25px]">
+            <p>{{ product.title.length > 20 ? (product.title | slice:0:10) + '...' : product.title }}</p>
+            <p>${{product.price}}$</p>
+          </div>
+          <img src="/favorite.png" alt="" class="mt-[25px]">
+        </div>
+
+    </div>
+    } @empty {
+      <p>no hay productos</p>
+    }
+
+
+
+  </div>
+
+
+
+</section>
 
 <!-- <ul>
-    @for (product of products; track product.id ) {
-      <li>{{product.title}}</li>
-    } @empty {
-      <li>no hay productos</li>
-    }
+
 </ul> -->

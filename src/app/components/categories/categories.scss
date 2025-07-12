@@ -1,3 +1,14 @@
-.card {
-  border: 1px solid #797979;
+.categories-section {
+
+  .card {
+    border: 1px solid #797979;
+    cursor: pointer;
+  }
+
+  .scrollable {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
 }
+

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Categories } from './components/categories/categories';
-// import { Products } from './components/products/products';
+import { Products } from './components/products/products';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Categories],
+  imports: [RouterOutlet, Categories, Products],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
