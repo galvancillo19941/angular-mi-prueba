@@ -1,8 +1,10 @@
 import { Component, Input, SimpleChanges  } from '@angular/core';
+import { SkeletonModule } from 'primeng/skeleton';
 
 
 @Component({
   selector: 'app-categories',
+  imports: [SkeletonModule],
   templateUrl: './categories.html',
   styleUrl: './categories.scss'
 })
