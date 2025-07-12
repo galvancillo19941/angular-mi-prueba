@@ -16,3 +16,16 @@
   }
 
 }
+
+:host ::ng-deep {
+
+  .dialog-product {
+
+    .p-component-overlay {
+        -webkit-backdrop-filter: blur(5px) !important;
+        backdrop-filter: blur(5px) !important;
+    }
+
+  }
+
+}
