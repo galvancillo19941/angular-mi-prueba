@@ -12,7 +12,7 @@
             <p>{{ product.title.length > 20 ? (product.title | slice:0:10) + '...' : product.title }}</p>
             <p>${{product.price}}$</p>
           </div>
-          <img src="/favorite.png" alt="" class="mt-[25px]">
+          <img src="assets/images/favorite.png" alt="" class="mt-[25px]">
         </div>
 
     </div>
@@ -45,13 +45,29 @@
     [style]="{ width: '70rem' }"
     [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
 
-    <div class="body-dialog grid grid-cols-2">
-        <img [src]="productSelect.image" alt="">
-        <div>
-          <p class="text-[35px] text-[#F26F3F]">{{productSelect.title}}</p>
+    <div class="body-dialog grid grid-cols-5 gap-[5px]">
+        <img [src]="productSelect.image" alt="" class="img-product col-span-2">
+        <div class="col-span-3">
+          <p class="text-[35px] text-[#F26F3F] font-bold">{{productSelect.title}}</p>
+
+          <div class="flex gap-[10px] mb-[60px] mt-[30px] items-center">
+            <p class="text-[16px] text-[#333333] font-semibold">Talla </p>
+            <div class="flex gap-[10px]">
+              <p class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-medium py-[10px] px-[10px] rounded-[10px] cursor-pointer">S</p>
+              <p class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-medium py-[10px] px-[10px] rounded-[10px] cursor-pointer">M</p>
+              <P class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-medium py-[10px] px-[10px] rounded-[10px] cursor-pointer">L</P>
+              <P class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-medium py-[10px] px-[10px] rounded-[10px] cursor-pointer">XL</P>
+            </div>
+          </div>
+
           <p class="text-[30px]">Descripción</p>
           <p class="text-[20px]">{{productSelect.description}}</p>
         </div>
+    </div>
+
+    <div class="flex justify-end gap-2 mt-[45px] content-button">
+        <p-button class="border w-[250px] h-[70px] text-center bg-[#fff] hover:bg-[#E7E7E7] border-[#000] rounded-[25px]" label="Cancel" (onClick)="visible = false" />
+        <p-button class="border w-[250px] h-[70px] text-center bg-[#61E27D] hover:bg-[#00DD30] border-[#61E27D] rounded-[25px] text-[#FFFFFF]" label="Agregar a la bolsa" (onClick)="visible = false"/>
     </div>
 
 </p-dialog>

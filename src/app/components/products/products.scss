@@ -26,6 +26,27 @@
         backdrop-filter: blur(5px) !important;
     }
 
+    .p-dialog-content, .p-dialog-header {
+      background-color: #F9F9F9;
+    }
+
+    .img-product {
+      width: 353px;
+      height: 397px;
+      margin: auto;
+      object-fit: contain;
+    }
+
+    .content-button {
+      .p-button {
+        height: 100% !important;
+        width: 100% !important;
+        box-shadow: none;
+      }
+    }
+
+
   }
+
 
 }

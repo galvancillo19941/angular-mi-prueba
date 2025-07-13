@@ -8,10 +8,10 @@
     @for (categorie of categories; track categorie.id ) {
 
      <div class="card px-[20px] py-[20px] rounded-[20px] snap-start shrink-0 flex items-center gap-[10px]" >
-        <img [src]="categorie.category === `men's clothing` ? '/ropa.png'
-          : (categorie.category === 'jewelery') ? '/regalo.png'
-          : (categorie.category === 'electronics') ? '/juegos.png'
-          : (categorie.category === `women's clothing`) ? '/maleta.png' : ''" alt="">
+        <img [src]="categorie.category === `men's clothing` ? 'assets/images/ropa.png'
+          : (categorie.category === 'jewelery') ? 'assets/images/regalo.png'
+          : (categorie.category === 'electronics') ? 'assets/images/juegos.png'
+          : (categorie.category === `women's clothing`) ? 'assets/images/maleta.png' : ''" alt="">
         <p class="text-[18px]">{{categorie.category}}</p>
     </div>
 

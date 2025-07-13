@@ -6,9 +6,9 @@ import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-products',
-  imports: [CommonModule, SlicePipe, SkeletonModule, DialogModule, ButtonModule ],
+  imports: [CommonModule, SlicePipe, SkeletonModule, DialogModule, ButtonModule],
   templateUrl: './products.html',
-  styleUrl: './products.scss'
+  styleUrls: ['./products.scss']
 })
 export class Products {
 
