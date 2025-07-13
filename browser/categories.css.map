@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/components/categories/categories.scss"],
-  "sourcesContent": [".categories-section {\r\n\r\n  .card {\r\n    border: 1px solid #797979;\r\n    cursor: pointer;\r\n  }\r\n\r\n  .scrollable {\r\n    overflow-x: auto;\r\n    white-space: nowrap;\r\n  }\r\n\r\n}\r\n\r\n"],
-  "mappings": ";AAEE,CAAA,mBAAA,CAAA;AACE,UAAA,IAAA,MAAA;AACA,UAAA;;AAGF,CALA,mBAKA,CAAA;AACE,cAAA;AACA,eAAA;;",
-  "names": []
-}
