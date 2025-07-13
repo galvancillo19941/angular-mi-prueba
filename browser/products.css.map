@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/products/products.scss"],
+  "sourcesContent": [".product-section {\r\n\r\n  .card {\r\n    background-color: white;\r\n    width: 100%;\r\n    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;\r\n    cursor: pointer;\r\n\r\n    .img-product {\r\n      width: 166px;\r\n      height: 166px;\r\n      object-fit: contain;\r\n      margin: auto;\r\n    }\r\n\r\n  }\r\n\r\n}\r\n\r\n:host ::ng-deep {\r\n\r\n  .dialog-product {\r\n\r\n    .p-component-overlay {\r\n        -webkit-backdrop-filter: blur(5px) !important;\r\n        backdrop-filter: blur(5px) !important;\r\n    }\r\n\r\n    .p-dialog-content, .p-dialog-header {\r\n      background-color: #F9F9F9;\r\n    }\r\n\r\n    .img-product {\r\n      width: 353px;\r\n      height: 397px;\r\n      margin: auto;\r\n      object-fit: contain;\r\n    }\r\n\r\n    .content-button {\r\n      .p-button {\r\n        height: 100% !important;\r\n        width: 100% !important;\r\n        box-shadow: none;\r\n      }\r\n    }\r\n\r\n\r\n  }\r\n\r\n\r\n}"],
+  "mappings": ";AAEE,CAAA,gBAAA,CAAA;AACE,oBAAA;AACA,SAAA;AACA,cAAA,KAAA,GAAA,EAAA,GAAA,EAAA,GAAA,EAAA,KAAA,IAAA,IAAA,KAAA;AACA,UAAA;;AAEA,CANF,gBAME,CANF,KAME,CAAA;AACE,SAAA;AACA,UAAA;AACA,cAAA;AACA,UAAA;;AAWF,MAAA,UAAA,CAAA,eAAA,CAAA;AACI,2BAAA,KAAA;AACA,mBAAA,KAAA;;AAGJ,MAAA,UAAA,CALA,eAKA,CAAA;AAAA,MAAA,UAAA,CALA,eAKA,CAAA;AACE,oBAAA;;AAGF,MAAA,UAAA,CATA,eASA,CAxBA;AAyBE,SAAA;AACA,UAAA;AACA,UAAA;AACA,cAAA;;AAIA,MAAA,UAAA,CAjBF,eAiBE,CAAA,eAAA,CAAA;AACE,UAAA;AACA,SAAA;AACA,cAAA;;",
+  "names": []
+}
