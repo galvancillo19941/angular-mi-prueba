@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'assets/fonts/fonts';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@use 'assets/fonts/fonts';
+
 
 body {
     background-color: #F5F5F5;
