@@ -4,9 +4,20 @@
 
 
 header {
-
   .link {
-   font-family: 'Satoshi-Light';
+   font-family: 'Satoshi-Medium';
+  }
+
+}
+
+.text-form {
+  font-family: 'Satoshi-Bold';
+}
+
+:host ::ng-deep {
+
+  .input {
+    font-family: 'Satoshi-Medium';
   }
 
 }
