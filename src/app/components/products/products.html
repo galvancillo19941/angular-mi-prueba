@@ -10,7 +10,7 @@
         <div class="body flex items-center justify-between gap-[10px]">
           <div class="mt-[25px]">
             <p class="text-16px font-[Satoshi-Medium]">{{ product.title.length > 20 ? (product.title | slice:0:9) + '...' : product.title }}</p>
-            <p class="font-[Satoshi-Medium] text-[#A9A9A9]">${{product.price}}$</p>
+            <p class="text-16px font-[Satoshi-Medium] text-[#A9A9A9]">${{product.price}}$</p>
           </div>
           <img src="assets/images/favorite.png" alt="" class="mt-[25px]">
         </div>
@@ -43,31 +43,35 @@
     [modal]="true"
     [(visible)]="visible"
     [style]="{ width: '70rem' }"
-    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+    [breakpoints]="{ '1199px': '75vw', '767px': '100%' }">
 
-    <div class="body-dialog grid grid-cols-5 gap-[5px]">
-        <img [src]="productSelect.image" alt="" class="img-product col-span-2">
-        <div class="col-span-3">
-          <p class="text-[35px] text-[#F26F3F] font-bold">{{productSelect.title}}</p>
+    <div class="body-dialog grid xl:grid-cols-5 gap-[10px]">
+        <img [src]="productSelect.image" alt="" class="img-product xl:col-span-2">
+        <div class="xl:col-span-3">
+          <p class="text-[24px] leading-[30px] md:text-[35px] md:leading-[45px] text-[#F26F3F] font-[Satoshi-Bold] mt-[41px] xl:mt-[0]">{{productSelect.title}}</p>
 
           <div class="flex gap-[10px] mb-[60px] mt-[30px] items-center">
-            <p class="text-[16px] text-[#333333] font-semibold">Talla </p>
+            <p class="text-[16px] text-[#333333] font-[Satoshi-Medium">Talla </p>
             <div class="flex gap-[10px]">
-              <p class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-medium py-[10px] px-[10px] rounded-[10px] cursor-pointer">S</p>
-              <p class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-medium py-[10px] px-[10px] rounded-[10px] cursor-pointer">M</p>
-              <P class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-medium py-[10px] px-[10px] rounded-[10px] cursor-pointer">L</P>
-              <P class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-medium py-[10px] px-[10px] rounded-[10px] cursor-pointer">XL</P>
+              <p class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-[Satoshi-Regular] py-[10px] px-[10px] rounded-[10px] cursor-pointer">S</p>
+              <p class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-[Satoshi-Regular] py-[10px] px-[10px] rounded-[10px] cursor-pointer">M</p>
+              <P class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-[Satoshi-Regular] py-[10px] px-[10px] rounded-[10px] cursor-pointer">L</P>
+              <P class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-[Satoshi-Regular] py-[10px] px-[10px] rounded-[10px] cursor-pointer">XL</P>
             </div>
           </div>
 
-          <p class="text-[30px]">Descripción</p>
-          <p class="text-[20px]">{{productSelect.description}}</p>
+          <p class="text-[30px] text-[#333333] font-[Satoshi-Regular] mb-[20px]">Descripción</p>
+          <p class="text-[20px] text-[#888888] font-[Satoshi-Medium]">{{productSelect.description}}</p>
         </div>
     </div>
 
-    <div class="flex justify-end gap-2 mt-[45px] content-button">
-        <p-button class="border w-[250px] h-[70px] text-center bg-[#fff] hover:bg-[#E7E7E7] border-[#000] rounded-[25px]" label="Cancel" (onClick)="visible = false" />
-        <p-button class="border w-[250px] h-[70px] text-center bg-[#61E27D] hover:bg-[#00DD30] border-[#61E27D] rounded-[25px] text-[#FFFFFF]" label="Agregar a la bolsa" (onClick)="visible = false"/>
+    <div class="content-button flex md:hidden fixed bottom-[30px] left-1/2 -translate-x-1/2">
+      <p-button class="border mx-3 w-[95%] h-[70px] text-center bg-[#61E27D] font-[Satoshi-Bold] border-[#61E27D] rounded-[25px] text-[#FFFFFF] hover:bg-[#00DD30]" label="Agregar a la bolsa" (onClick)="visible = false"/>
+    </div>
+
+    <div class="justify-end gap-2 mt-[45px] content-button pb-[30px] hidden md:flex">
+      <p-button class="border w-[250px] h-[70px] text-center bg-[#fff]  text-[#000000] border-[#000000] rounded-[25px] font-[Satoshi-Bold] hover:bg-[#E7E7E7]" label="Cancel" (onClick)="visible = false" />
+      <p-button class="border w-[250px] h-[70px] text-center bg-[#61E27D] font-[Satoshi-Bold] border-[#61E27D] rounded-[25px] text-[#FFFFFF] hover:bg-[#00DD30]" label="Agregar a la bolsa" (onClick)="visible = false"/>
     </div>
 
 </p-dialog>
