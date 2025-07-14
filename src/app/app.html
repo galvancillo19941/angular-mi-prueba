@@ -1,7 +1,7 @@
 
-<header class="hidden sm:block ">
+<header class="hidden sm:block sm:px-[40px] md:px-[50px] lg:px-[70px]">
 
-  <div class="grid gap-4 grid-cols-2 p-8 ">
+  <div class="grid gap-4 grid-cols-2 py-8 ">
     <div class="">
       <img src="assets/images/logo.svg" alt="">
     </div>
@@ -16,7 +16,7 @@
 </header>
 
 
-<div class="contain-page px-[20px]">
+<div class="contain-page px-[20px] sm:px-[40px] md:px-[50px] lg:px-[70px] pb-[100px]">
 
   <div class="flex justify-center form">
 
@@ -33,13 +33,18 @@
 
 </div>
 
-<!-- <app-categories [products]="products"></app-categories> -->
+<app-categories [products]="products"></app-categories>
 
-<!-- <app-products [products]="products"></app-products> -->
+<app-products [products]="products"></app-products>
 
 </div>
 
-
+<div class="mobile-float-menu fixed bg-[#61E27D] w-[94%] h-[97px] bottom-[30px] left-1/2 -translate-x-1/2 rounded-[25px] flex sm:hidden items-center justify-center gap-[60px] px-[40px]">
+  <img src="assets/images/menu/inicio.png" alt="">
+  <img src="assets/images/menu/categorias.png" alt="">
+  <img src="assets/images/menu/bolsa.png" alt="">
+  <img src="assets/images/menu/User.png" alt="">
+</div>
 
 
 <router-outlet />

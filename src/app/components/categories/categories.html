@@ -1,5 +1,5 @@
-<section class="px-[30px] py-[70px] categories-section">
-  <p class="text-[20px] font-semibold mb-8">
+<section class=" py-[70px] categories-section">
+  <p class="text-[20px] sm:text-[24px] font-semibold mb-8 font-[Satoshi-Bold]">
     Categorías
   </p>
 
@@ -7,12 +7,12 @@
 
     @for (categorie of categories; track categorie.id ) {
 
-     <div class="card px-[20px] py-[20px] rounded-[20px] snap-start shrink-0 flex items-center gap-[10px]" >
+     <div class="card px-[20px] py-[20px] rounded-[20px] snap-start shrink-0 flex items-center gap-[10px] font-[Satoshi-Medium]" >
         <img [src]="categorie.category === `men's clothing` ? 'assets/images/ropa.png'
           : (categorie.category === 'jewelery') ? 'assets/images/regalo.png'
           : (categorie.category === 'electronics') ? 'assets/images/juegos.png'
           : (categorie.category === `women's clothing`) ? 'assets/images/maleta.png' : ''" alt="">
-        <p class="text-[18px]">{{categorie.category}}</p>
+        <p class="text-[16px] sm:text-[18px]">{{categorie.category}}</p>
     </div>
 
     } @empty {
