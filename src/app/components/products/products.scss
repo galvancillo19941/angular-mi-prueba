@@ -46,18 +46,18 @@
 
     .p-dialog-content {
       padding-bottom: 120px;
+
+      @media (min-width: 768px) {
+        padding-bottom: 40px;
+      }
     }
 
     .p-dialog-header {
-
       @media (min-width: 768px) {
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
       }
-
-
     }
-
 
     .p-dialog-content {
 
@@ -69,9 +69,18 @@
     }
 
     .img-product {
-      width: 353px;
+      width: 200px;
       margin: auto;
       object-fit: contain;
+
+      @media (min-width: 800px) {
+        width: 260px;
+      }
+
+      @media (min-width: 1280px) {
+        width: 353px;
+      }
+
     }
 
     .content-button {

@@ -15,10 +15,33 @@ export class Products {
   @Input() products: any[] = [];
   visible = false
   productSelect: any = {};
+  carts: any[] = [];
 
   showDialog(product: any) {
     this.visible = true
     this.productSelect = product
+  }
+
+  addCart() {
+
+      const yaExiste = this.carts.some(d => d.id === this.productSelect.id);
+
+      if (!yaExiste) {
+        this.carts.push({
+          ...this.productSelect,
+          quantities: 0
+        })
+      }
+
+      this.carts.forEach(item => {
+
+      if(item.id === this.productSelect.id) {
+        item.quantities++
+      }
+
+    });
+
+    console.log(this.carts)
   }
 
 }
