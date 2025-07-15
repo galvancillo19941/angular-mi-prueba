@@ -82,12 +82,34 @@
       <p-button
         class="border w-[250px] h-[70px] text-center bg-[#61E27D] font-[Satoshi-Bold] border-[#61E27D] rounded-[25px] text-[#FFFFFF] hover:bg-[#00DD30]"
         label="Agregar a la bolsa"
-        (onClick)="visible = true"
         (click)="addCart()"
         />
     </div>
 
 </p-dialog>
+
+<p-dialog
+    class="dialog-cart"
+    [modal]="true"
+    [(visible)]="visibleCart"
+    [style]="{ width: '50rem' }"
+    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+    >
+   <div>
+    <p class="text-[34px] text-center">Mi Bolsa</p>
+
+    <div class="contain grid grid-cols-2 gap-4">
+      <div>
+        dasd
+      </div>
+      <div>
+        dasd
+      </div>
+    </div>
+
+   </div>
+</p-dialog>
+
 
 </section>
 

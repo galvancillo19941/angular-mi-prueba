@@ -13,7 +13,8 @@ import { ButtonModule } from 'primeng/button';
 export class Products {
 
   @Input() products: any[] = [];
-  visible = false
+  visible = false;
+  visibleCart = false;
   productSelect: any = {};
   carts: any[] = [];
 
@@ -35,13 +36,15 @@ export class Products {
 
       this.carts.forEach(item => {
 
-      if(item.id === this.productSelect.id) {
-        item.quantities++
-      }
+        if(item.id === this.productSelect.id) {
+          item.quantities++
+        }
 
-    });
+      });
 
-    console.log(this.carts)
+    this.visible = false;
+    this.visibleCart = true
+
   }
 
 }
