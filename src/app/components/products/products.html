@@ -1,114 +1,154 @@
 <section class="py-[10px] product-section">
   <p class="text-[20px] sm:text-[24px] font-semibold mb-8 font-[Satoshi-Bold]">Top ventas</p>
 
-  <div class="contain-card grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 gap-[20px]">
+  <div
+    class="contain-card grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 gap-[20px]">
 
-      @for (product of products; track product.id ) {
-      <div class="card px-[19px] pt-[14px] rounded-[20px] pb-[30px]" (click)="showDialog(product)">
-        <img [src]="product.image" alt="" class="img-product">
+    @for (product of products; track product.id ) {
+    <div class="card px-[19px] pt-[14px] rounded-[20px] pb-[30px]" (click)="showDialog(product)">
+      <img [src]="product.image" alt="" class="img-product">
 
-        <div class="body flex items-center justify-between gap-[10px]">
-          <div class="mt-[25px]">
-            <p class="text-16px font-[Satoshi-Medium]">{{ product.title.length > 20 ? (product.title | slice:0:9) + '...' : product.title }}</p>
-            <p class="text-16px font-[Satoshi-Medium] text-[#A9A9A9]">${{product.price}}$</p>
-          </div>
-          <img src="assets/images/favorite.png" alt="" class="mt-[25px]">
+      <div class="body flex items-center justify-between gap-[10px]">
+        <div class="mt-[25px]">
+          <p class="text-16px font-[Satoshi-Medium]">{{ product.title.length > 20 ? (product.title | slice:0:9) + '...'
+            : product.title }}</p>
+          <p class="text-16px font-[Satoshi-Medium] text-[#A9A9A9]">{{product.price}}$</p>
         </div>
+        <img src="assets/images/favorite.png" alt="" class="mt-[25px]">
+      </div>
 
     </div>
     } @empty {
 
-        <p-skeleton width="100%" height="20rem" />
-        <p-skeleton width="100%" height="20em" />
-        <p-skeleton width="100%" height="20rem" />
-        <p-skeleton width="100%" height="20rem" />
-        <p-skeleton width="100%" height="20rem" />
-        <p-skeleton width="100%" height="20rem" />
-        <p-skeleton width="100%" height="20rem" />
-        <p-skeleton width="100%" height="20rem" />
-        <p-skeleton width="100%" height="20rem" />
-        <p-skeleton width="100%" height="20rem" />
-        <p-skeleton width="100%" height="20rem" />
-        <p-skeleton width="100%" height="20rem" />
-        <p-skeleton width="100%" height="20rem" />
-        <p-skeleton width="100%" height="20rem" />
+    <p-skeleton width="100%" height="20rem" />
+    <p-skeleton width="100%" height="20em" />
+    <p-skeleton width="100%" height="20rem" />
+    <p-skeleton width="100%" height="20rem" />
+    <p-skeleton width="100%" height="20rem" />
+    <p-skeleton width="100%" height="20rem" />
+    <p-skeleton width="100%" height="20rem" />
+    <p-skeleton width="100%" height="20rem" />
+    <p-skeleton width="100%" height="20rem" />
+    <p-skeleton width="100%" height="20rem" />
+    <p-skeleton width="100%" height="20rem" />
+    <p-skeleton width="100%" height="20rem" />
+    <p-skeleton width="100%" height="20rem" />
+    <p-skeleton width="100%" height="20rem" />
     }
 
   </div>
 
 
-<p-dialog
-    class="dialog-product"
-    header=""
-    [modal]="true"
-    [(visible)]="visible"
-    [style]="{ width: '70rem' }"
+  <p-dialog class="dialog-product" header="" [modal]="true" [(visible)]="visible" [style]="{ width: '70rem' }"
     [breakpoints]="{ '1199px': '75vw', '767px': '100%' }">
 
     <div class="body-dialog grid xl:grid-cols-5 gap-[10px]">
 
-        <img [src]="productSelect.image" alt="" class="img-product xl:col-span-2">
+      <img [src]="productSelect.image" alt="" class="img-product xl:col-span-2">
 
-        <div class="xl:col-span-3">
+      <div class="xl:col-span-3">
 
-          <p class="text-[24px] leading-[30px] md:text-[35px] md:leading-[45px] text-[#F26F3F] font-[Satoshi-Bold] mt-[41px] xl:mt-[0]">{{productSelect.title}}</p>
+        <p
+          class="text-[24px] leading-[30px] md:text-[35px] md:leading-[45px] text-[#F26F3F] font-[Satoshi-Bold] mt-[41px] xl:mt-[0]">
+          {{productSelect.title}}</p>
 
-          <div class="flex gap-[10px] mb-[60px] mt-[30px] items-center">
-            <p class="text-[16px] text-[#333333] font-[Satoshi-Medium">Talla </p>
+        <div class="flex gap-[10px] mb-[60px] mt-[30px] items-center">
+          <p class="text-[16px] text-[#333333] font-[Satoshi-Medium">Talla </p>
 
-            <div class="flex gap-[10px]">
-              <p class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-[Satoshi-Regular] py-[10px] px-[10px] rounded-[10px] cursor-pointer">S</p>
-              <p class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-[Satoshi-Regular] py-[10px] px-[10px] rounded-[10px] cursor-pointer">M</p>
-              <P class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-[Satoshi-Regular] py-[10px] px-[10px] rounded-[10px] cursor-pointer">L</P>
-              <P class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-[Satoshi-Regular] py-[10px] px-[10px] rounded-[10px] cursor-pointer">XL</P>
-            </div>
+          <div class="flex gap-[10px]">
+            <p
+              class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-[Satoshi-Regular] py-[10px] px-[10px] rounded-[10px] cursor-pointer">
+              S</p>
+            <p
+              class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-[Satoshi-Regular] py-[10px] px-[10px] rounded-[10px] cursor-pointer">
+              M</p>
+            <P
+              class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-[Satoshi-Regular] py-[10px] px-[10px] rounded-[10px] cursor-pointer">
+              L</P>
+            <P
+              class="bg-[#fff] hover:bg-[#61E27D] text-[24px] text-[#333333] hover:text-[#fff] font-[Satoshi-Regular] py-[10px] px-[10px] rounded-[10px] cursor-pointer">
+              XL</P>
           </div>
-
-          <p class="text-[24px] md:text-[30px] text-[#333333] font-[Satoshi-Regular] mb-[20px]">Descripción</p>
-          <p class="text-[18px]  md:text-[20px] text-[#888888] font-[Satoshi-Medium]">{{productSelect.description}}</p>
         </div>
+
+        <p class="text-[24px] md:text-[30px] text-[#333333] font-[Satoshi-Regular] mb-[20px]">Descripción</p>
+        <p class="text-[18px]  md:text-[20px] text-[#888888] font-[Satoshi-Medium]">{{productSelect.description}}</p>
+      </div>
     </div>
 
     <div class="content-button flex md:hidden fixed bottom-[30px] left-1/2 -translate-x-1/2">
-      <p-button class="border mx-3 w-[95%] h-[70px] text-center bg-[#61E27D] font-[Satoshi-Bold] border-[#61E27D] rounded-[25px] text-[#FFFFFF] hover:bg-[#00DD30]" label="Agregar a la bolsa" (onClick)="visible = false"/>
+      <p-button
+        class="border mx-3 w-[95%] h-[70px] text-center bg-[#61E27D] font-[Satoshi-Bold] border-[#61E27D] rounded-[25px] text-[#FFFFFF] hover:bg-[#00DD30]"
+        label="Agregar a la bolsa" (onClick)="visible = false" />
     </div>
 
     <div class="justify-end gap-2 mt-[45px] content-button pb-[30px] hidden md:flex">
       <p-button
         class="border w-[250px] h-[70px] text-center bg-[#fff]  text-[#000000] border-[#000000] rounded-[25px] font-[Satoshi-Bold] hover:bg-[#E7E7E7]"
-        label="Cancel"
-        (onClick)="visible = false" />
+        label="Cancel" (onClick)="visible = false" />
 
       <p-button
         class="border w-[250px] h-[70px] text-center bg-[#61E27D] font-[Satoshi-Bold] border-[#61E27D] rounded-[25px] text-[#FFFFFF] hover:bg-[#00DD30]"
-        label="Agregar a la bolsa"
-        (click)="addCart()"
-        />
+        label="Agregar a la bolsa" (click)="addCart()" />
     </div>
 
-</p-dialog>
+  </p-dialog>
 
-<p-dialog
-    class="dialog-cart"
-    [modal]="true"
-    [(visible)]="visibleCart"
-    [style]="{ width: '50rem' }"
-    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
-    >
-   <div>
-    <p class="text-[34px] text-center">Mi Bolsa</p>
+  <p-dialog class="dialog-cart" [modal]="true" [(visible)]="visibleCart" [style]="{ width: '50rem' }"
+    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+    <div>
+      <p class="text-[34px] text-center text-[#222324] font-[Satoshi-Bold] mb-[35px]">Mi Bolsa</p>
 
-    <div class="contain grid grid-cols-2 gap-4">
-      <div>
-        dasd
+      <div class="contain grid grid-cols-2 gap-[50px]">
+
+        <div>
+          @for (cart of carts; track cart.id ) {
+            <div>
+              <div class="card rounded-[20px] mb-[20px] grid grid-cols-2 gap-[20px] justify-items-center content-center">
+                <div class="flex p-[14px] py-[18px] gap-4">
+                  <img [src]="cart.image" class="w-[80px] h-[80px]" alt="">
+                  <div class="flex flex-col">
+                    <p class="text-[20px] text-[#000000] font-[Satoshi-Regular]">Camisa</p>
+                    <p class="text-[24px] text-[#000000] font-[Satoshi-Regular]">${{cart.price}} <span
+                        class="text-[14px] text-[#797979]">/ Talla S</span></p>
+                  </div>
+                </div>
+
+                <p class="text-[20px]">{{cart.quantities}}</p>
+
+              </div>
+            </div>
+          }
+
+        </div>
+
+        <div>
+
+          <p class="text-[24px] text-[#000000] font-[Satoshi-Regular] mb-[20px]">Información del pedido</p>
+
+          <div class="flex mb-[10px] items-center gap-2">
+            <img src="assets/images/Icono1.png" alt="">
+            <p class="text-[20px] text-[#000000] font-[Satoshi-Regular]">Productos (3): $234</p>
+          </div>
+
+          <div class="flex items-center gap-2 mb-[20px]">
+            <img src="assets/images/Icono1.png" alt="">
+            <p class="text-[20px] text-[#000000] font-[Satoshi-Regular]">Impuestos: $24</p>
+          </div>
+
+          <hr>
+
+          <div class="flex mt-[20px] justify-between">
+            <p class="text-[24px] text-[#000000] font-[Satoshi-Regular]">Total:</p>
+            <p class="text-[24px] text-[#000000] font-[Satoshi-Regular]">$258</p>
+          </div>
+
+        </div>
+
       </div>
-      <div>
-        dasd
-      </div>
+
     </div>
-
-   </div>
-</p-dialog>
+  </p-dialog>
 
 
 </section>

@@ -1,4 +1,4 @@
-import { Component, Input, } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { SlicePipe, CommonModule } from '@angular/common';
 import { SkeletonModule } from 'primeng/skeleton';
 import { DialogModule } from 'primeng/dialog';
@@ -14,13 +14,22 @@ export class Products {
 
   @Input() products: any[] = [];
   visible = false;
-  visibleCart = false;
+  visibleCart = true;
   productSelect: any = {};
   carts: any[] = [];
 
   showDialog(product: any) {
     this.visible = true
     this.productSelect = product
+  }
+
+  ngOnChanges(changes: SimpleChanges)  {
+
+    const carts = JSON.parse(localStorage.getItem('carts') || '[]');
+
+    if (changes['products']) {
+      this.carts = carts
+    }
   }
 
   addCart() {
@@ -43,7 +52,10 @@ export class Products {
       });
 
     this.visible = false;
-    this.visibleCart = true
+    this.visibleCart = true;
+
+    const serializedState = JSON.stringify(this.carts);
+    localStorage.setItem('carts', serializedState);
 
   }
 
