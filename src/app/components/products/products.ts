@@ -3,6 +3,7 @@ import { SlicePipe, CommonModule } from '@angular/common';
 import { SkeletonModule } from 'primeng/skeleton';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-products',
@@ -17,6 +18,10 @@ export class Products {
   visibleCart = true;
   productSelect: any = {};
   carts: any[] = [];
+
+   private cartsSubject = new BehaviorSubject<any[]>(this.loadCarts());
+    carts$ = this.cartsSubject.asObservable();
+
 
   showDialog(product: any) {
     this.visible = true
@@ -57,6 +62,38 @@ export class Products {
     const serializedState = JSON.stringify(this.carts);
     localStorage.setItem('carts', serializedState);
 
+  }
+
+   private loadCarts(): any[] {
+    return JSON.parse(localStorage.getItem('carts') || '[]');
+  }
+
+  private saveCarts(carts: any[]) {
+    localStorage.setItem('carts', JSON.stringify(carts));
+    this.cartsSubject.next(carts);
+  }
+
+   addQuantities(add: { id: string | number; quantities: number }) {
+    const carts = this.loadCarts();
+
+    const item = carts.find(c => c.id === add.id);
+    if (item) {
+      item.quantities++;
+    }
+
+    this.saveCarts(carts);
+  }
+
+  deleteQuantities(delet: { id: string | number; quantities: number }) {
+
+    const carts = this.loadCarts();
+
+    const item = carts.find(c => c.id === delet.id);
+    if (item) {
+      item.quantities--;
+    }
+
+    this.saveCarts(carts);
   }
 
 }

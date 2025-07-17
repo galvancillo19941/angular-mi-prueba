@@ -94,18 +94,19 @@
 
   </p-dialog>
 
-  <p-dialog class="dialog-cart" [modal]="true" [(visible)]="visibleCart" [style]="{ width: '50rem' }"
-    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+  <p-dialog class="dialog-cart" [modal]="true" [(visible)]="visibleCart" [style]="{ width: '60rem' }"
+    [breakpoints]="{ '1199px': '75vw', '767px': '100%' }">
     <div>
       <p class="text-[34px] text-center text-[#222324] font-[Satoshi-Bold] mb-[35px]">Mi Bolsa</p>
 
       <div class="contain grid grid-cols-2 gap-[50px]">
 
         <div>
-          @for (cart of carts; track cart.id ) {
+          @for (cart of carts$ | async; track cart.id) {
             <div>
-              <div class="card rounded-[20px] mb-[20px] grid grid-cols-2 gap-[20px] justify-items-center content-center">
-                <div class="flex p-[14px] py-[18px] gap-4">
+              <div class="card rounded-[20px] mb-[20px] grid grid-cols-5 gap-[20px] justify-items-center content-center justify-items-stretch">
+
+                <div class="flex p-[14px] py-[18px] gap-4 col-span-3">
                   <img [src]="cart.image" class="w-[80px] h-[80px]" alt="">
                   <div class="flex flex-col">
                     <p class="text-[20px] text-[#000000] font-[Satoshi-Regular]">Camisa</p>
@@ -114,7 +115,22 @@
                   </div>
                 </div>
 
-                <p class="text-[20px]">{{cart.quantities}}</p>
+                <div class="flex items-center col-span-2">
+                  <p-button
+                  label="-"
+                  severity="warning"
+                  (click)="deleteQuantities(cart)"
+                  class="mr-[20px] text-[25px] w-[30px] h-[30px] text-center leading-[30px] font-[Satoshi-Bold]"/>
+
+                  <p class="text-[20px]">{{cart.quantities}}</p>
+
+                  <p-button
+                    label="+"
+                    severity="warning"
+                    (click)="addQuantities(cart)"
+                    class="bg-[#F26F3F] text-[white] text-[25px] ml-[20px] w-[30px] h-[30px] rounded-[10px] text-center leading-[30px] font-[Satoshi-Bold] mx-20px"/>
+
+                </div>
 
               </div>
             </div>
